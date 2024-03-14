@@ -3,18 +3,18 @@
 - Modern React
 - React Router
 - Typescript
+- Material UI 
+- Figma
 - Plain CSS / CSS Modules
+- React Query
+- React Table
 - Axios HTTP Client
 - Passport JWT / Axios Interceptors 
 - React Hook Form / Zod Schema Validation
-- Material UI 
-- Figma
 - Uppy File Uploader
-- React DnD
-- ExifReader
 - AWS SDK / S3-Client / Cloudflare R2 Object Storage
-- React Query
-- React Table
+- ExifReader
+- React DnD
 - D3 (Data Visualization)
 - Leaflet / Leaflet React
 
