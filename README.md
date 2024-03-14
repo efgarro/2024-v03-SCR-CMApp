@@ -10,8 +10,9 @@
 - Material UI 
 - Figma
 - Uppy File Uploader
+- React DnD
 - ExifReader
-- AWS SDK / S3-Client / CF R2 Object Storate
+- AWS SDK / S3-Client / Cloudflare R2 Object Storage
 - React Query
 - React Table
 - D3 (Data Visualization)
