@@ -1,11 +1,11 @@
 ## Technologies Used
 
 - Modern React
-- React Router
 - Typescript
-- Material UI 
-- Figma
 - Plain CSS / CSS Modules
+- Material UI 
+- Figma Design Tool
+- React Router
 - React Query
 - React Table
 - Axios HTTP Client
