@@ -1,15 +1,18 @@
 ## Technologies Used
 
 - Modern React
+- React Router
 - Typescript
 - Passport JWT / Interceptors
 - React Hook Form
 - Material UI
 - Figma
 - Uppy File Uploader
+- ExifReader
 - React Query
 - React Table
-- React Router
+- D3 (Data Visualization)
+- Leaflet
 <br><br>
 
 ~~~
