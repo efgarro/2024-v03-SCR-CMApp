@@ -3,16 +3,20 @@
 - Modern React
 - React Router
 - Typescript
-- Passport JWT / Interceptors
-- React Hook Form
-- Material UI
+- Plain CSS / CSS Modules
+- Axios HTTP Client
+- Passport JWT / Axios Interceptors 
+- React Hook Form / Zod Schema Validation
+- Material UI 
 - Figma
 - Uppy File Uploader
 - ExifReader
+- AWS SDK / S3-Client / CF R2 Object Storate
 - React Query
 - React Table
 - D3 (Data Visualization)
-- Leaflet
+- Leaflet / Leaflet React
+
 <br><br>
 
 ~~~
