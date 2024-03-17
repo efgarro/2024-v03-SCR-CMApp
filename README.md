@@ -31,18 +31,17 @@ git push -u origin main
 
 ## Layout Containers
 
-- container
-- box
-- wrapper
-- flex-row
-- flex-col
-- header
-- nav
-- content
-- footer
-- h-case-one, h-case-two, etc
-- v-pod-one, v-pod-two
-- case-one, case-two
-- resta-case-one
-- pod-one, pod-two
-- pod / case / bin
+- .container
+- .box
+- .wrapper-one, .wrapper-two, etc
+- .flex-row
+- .flex-col
+- .header
+- .footer
+- .sidebar
+- .navbar
+- .main-content
+- .case-one, .case-two, etc
+- .pod-one, .pod-two, etc.
+- .bin-one, .bin-two, etc.
+- .resta-box
