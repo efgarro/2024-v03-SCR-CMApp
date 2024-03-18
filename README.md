@@ -45,3 +45,19 @@ git push -u origin main
 - .pod-one, .pod-two, etc.
 - .bin-one, .bin-two, etc.
 - .resta-box
+
+## Content Width
+
+### Main App
+
+- 335px portrait phone
+- 600px landscape phone
+- 720px portrait tablet
+- 900px landscape tablet
+- 1200px laptop / desktop
+
+### CMS App
+
+- 720px portrait tablet
+- 900px landscape tablet
+- 1200px laptop / desktop
