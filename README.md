@@ -50,14 +50,23 @@ git push -u origin main
 
 ### Main App
 
-- 335px portrait phone
-- 600px landscape phone
-- 720px portrait tablet
-- 900px landscape tablet
-- 1200px laptop / desktop
+- 576px and smaller screen size
+- 335px width content (phone portrait)
+- 577px and up screen size
+- 550px width content (phone landscape)
+- 769px and up screen size
+- 720px width content (tablet portrait) 
+- 992px and up screen size
+- 900px width content (tablet landscape)
+- 1200px and up screen size
+- 1050px width content (laptop)
+- 1400px and up screen size
+- 1200px width content (laptop / desktop)
 
 ### CMS App
 
+- 577px to 768px screen size
 - 720px portrait tablet
+- 769px to 992px screen size
 - 900px landscape tablet
 - 1200px laptop / desktop
