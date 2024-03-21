@@ -1,8 +1,21 @@
+/* Organizing Properties */
+/* by Kevin Powel */
+/* https://www.youtube.com/watch?v=3Y03OSNw6zo */
+
+/* display */
+/* positioning */
+/* box-model */
+/* typography*/
+/* manipulating */
+/* miscellaneous */
+
 /* LAYOUT RULES */
 
-/* Mobile Screen (Portrait) Rules <576px */
+/* Mobile Screen (Portrait) Rules <= 599px */
 
-@media only screen and (min-device-width: 768px) and (max-device-width: 991px) and (-webkit-min-device-pixel-ratio: 1) {
+/* Tablet Screen (Portrait) Rules >=600px < 991px*/
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 899px) and (-webkit-min-device-pixel-ratio: 1) {
   .layout-box {
     width: 100%;
   }
@@ -25,9 +38,9 @@
   }
 }
 
-/* Large Screen Rules >= 992px */
+/* Laptop / Desktop (large) Screen Rules >= 900px */
 
-@media (min-width: 992px) {
+@media (min-width: 900px) {
   .layout-box {
     width: 100%;
   }

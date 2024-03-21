@@ -65,8 +65,21 @@ git push -u origin main
 
 ### CMS App
 
-- 577px to 768px screen size
-- 720px portrait tablet
-- 769px to 992px screen size
-- 900px landscape tablet
-- 1200px laptop / desktop
+- 769px and up screen size
+- 720px width content (tablet portrait) 
+- 992px and up screen size
+- 900px width content (tablet landscape)
+- 1200px and up screen size
+- 1050px width content (laptop)
+- 1400px and up screen size
+- 1200px width content (laptop / desktop)
+- scrMap
+
+
+## Mapas
+
+- search for openstreetmap logo / icon
+- govisitcostarica.com
+- visitcostarica.com
+- https://www.arcgis.com/apps/webappviewer/index.html?id=6379ba7935a047ca99195f5e0c3cece9#
+- https://www.sinabi.go.cr/contactenos/preguntele_bibliotecaria.aspx
