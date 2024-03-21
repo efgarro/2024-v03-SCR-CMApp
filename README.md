@@ -23,15 +23,15 @@
 ```sh
 git init
 git add *
-git commit -m "0301a"
+git commit -m "<message>"
 git branch -M main
 git remote add origin https://github.com/efgarro/2024-v03-SCR-CMS.git
 git push -u origin main
 ```
 
-## CSS Classes Naming Convention 
+## CSS Naming Convention
 
-#### Layout Containers
+#### Layout Containers Classes
 
 ```sh
 .layout-container
@@ -42,7 +42,7 @@ git push -u origin main
 .layout-flex-col
 ```
 
-#### UI Modules
+#### UI Module Classes
 
 ```sh
 .header-menu, .header-logo, .header-searchBox, .header-<name>
@@ -55,19 +55,30 @@ git push -u origin main
 .restaBox-<name>
 ```
 
-## Breaking Points
+#### Organizing Properties
 
-#### Main App
+```sh
+/* by Kevin Powel */
+/* https://www.youtube.com/watch?v=3Y03OSNw6zo */
+
+/* display */
+/* positioning */
+/* box-model */
+/* typography*/
+/* manipulating */
+/* miscellaneous */
+```
+
+#### Breaking Points - Main App
 
 - Mobile Screen Rules <= 599px
 - Tablet Screen Rules >=600px < 991px
 - Laptop / Desktop (large) Screen Rules >= 900px
 
-#### CMS App
+#### Breaking Points - CMS App
 
 - Tablet Screen Rules >=600px < 991px
 - Laptop / Desktop (large) Screen Rules >= 900px
-- scrMap
 
 ## References
 
