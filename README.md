@@ -18,9 +18,9 @@
 - D3 (Data Visualization)
 - Leaflet / Leaflet React
 
-<br><br>
+## Git Setup
 
-```
+```sh
 git init
 git add *
 git commit -m "0301a"
@@ -29,54 +29,47 @@ git remote add origin https://github.com/efgarro/2024-v03-SCR-CMS.git
 git push -u origin main
 ```
 
-## Layout Containers
+## CSS Classes Naming Convention 
 
-- .container
-- .box
-- .wrapper-one, .wrapper-two, etc
-- .flex-row
-- .flex-col
-- .header
-- .footer
-- .sidebar
-- .navbar
-- .main-content
-- .case-one, .case-two, etc
-- .pod-one, .pod-two, etc.
-- .bin-one, .bin-two, etc.
-- .resta-box
+#### Layout Containers
 
-## Content Width
+```sh
+.layout-container
+.layout-wrapper
+.layout.box
+.layout-wrapperOne, .layout-wrapperTwo, etc
+.layout-flex-row
+.layout-flex-col
+```
 
-### Main App
+#### UI Modules
 
-- 576px and smaller screen size
-- 335px width content (phone portrait)
-- 577px and up screen size
-- 550px width content (phone landscape)
-- 769px and up screen size
-- 720px width content (tablet portrait) 
-- 992px and up screen size
-- 900px width content (tablet landscape)
-- 1200px and up screen size
-- 1050px width content (laptop)
-- 1400px and up screen size
-- 1200px width content (laptop / desktop)
+```sh
+.header-menu, .header-logo, .header-searchBox, .header-<name>
+.footer-menu, .footer-logo, .footer-searchBox, .footer-<name>
+.sidebar-box, sidebar-title, sidebar-<name>
+.navbar-<name>
+.main-content-<name>
+.caseOne-<name>, .caseTwo-<name>
+.podOne-<name>, .podTwo-<name>
+.restaBox-<name>
+```
 
-### CMS App
+## Breaking Points
 
-- 769px and up screen size
-- 720px width content (tablet portrait) 
-- 992px and up screen size
-- 900px width content (tablet landscape)
-- 1200px and up screen size
-- 1050px width content (laptop)
-- 1400px and up screen size
-- 1200px width content (laptop / desktop)
+#### Main App
+
+- Mobile Screen Rules <= 599px
+- Tablet Screen Rules >=600px < 991px
+- Laptop / Desktop (large) Screen Rules >= 900px
+
+#### CMS App
+
+- Tablet Screen Rules >=600px < 991px
+- Laptop / Desktop (large) Screen Rules >= 900px
 - scrMap
 
-
-## Mapas
+## References
 
 - search for openstreetmap logo / icon
 - govisitcostarica.com
