@@ -5,6 +5,7 @@ import sty from "./css/sty.module.css";
 const CMApp = ({ name } : {name: string}) => {
   return (
     <>
+    <div>Remote</div>
       <h1 className={sty.h1class}>Hello {name}</h1>
     </>
   );
