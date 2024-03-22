@@ -34,6 +34,7 @@ git push -u origin main
 #### Layout Containers Classes
 
 ```sh
+.layout-screen
 .layout-container
 .layout-wrapper
 .layout.box
@@ -79,6 +80,12 @@ git push -u origin main
 
 - Tablet Screen Rules >=600px < 991px
 - Laptop / Desktop (large) Screen Rules >= 900px
+
+## App.tsx Highlights
+
+- Include all routes in this component
+
+
 
 ## References
 

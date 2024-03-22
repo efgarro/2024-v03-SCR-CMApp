@@ -5,6 +5,6 @@ import { createRoot } from "react-dom/client";
 const domNode = document.getElementById("app") as HTMLElement;
 const root = createRoot(domNode);
 
-import App from "./App";
+import CMApp from "./CMApp"; // Import Content Management App
 
-root.render(<App name="Bella" />);
+root.render(<CMApp name="Bella" />);
