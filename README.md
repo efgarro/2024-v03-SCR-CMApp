@@ -1,3 +1,7 @@
+# Content Management Client for Soy Costa Rica App
+
+This is the Content Management Client to register and update places, articles, users, etc. for the Soy Costa Rica App (SCRApp)
+
 ## Technologies Used
 
 - Modern React
@@ -5,7 +9,7 @@
 - Plain CSS / CSS Modules
 - Material UI
 - Figma Design Tool
-- React Router
+- React Router DOM
 - React Query
 - React Table
 - Axios HTTP Client
@@ -28,6 +32,22 @@ git branch -M main
 git remote add origin https://github.com/efgarro/2024-v03-SCR-CMS.git
 git push -u origin main
 ```
+
+#### Other commands
+
+```sh
+git remote -v
+git remote set-url origin https://github.com/efgarro/2024-v03-SCR-CMApp.git // Renaming URL
+```
+"origin" is the shorthand for the repo's URL "https://github.com/efgarro/..."
+
+```sh
+git config --system --list
+git config --global --list
+git config --local --list
+git config --list --show-origin
+```
+
 
 ## CSS Naming Convention
 
@@ -70,13 +90,13 @@ git push -u origin main
 /* miscellaneous */
 ```
 
-#### Breaking Points - Main App
+#### Breaking Points - SCRApp
 
 - Mobile Screen Rules <= 599px
 - Tablet Screen Rules >=600px < 991px
 - Laptop / Desktop (large) Screen Rules >= 900px
 
-#### Breaking Points - CMS App
+#### Breaking Points - CMApp
 
 - Tablet Screen Rules >=600px < 991px
 - Laptop / Desktop (large) Screen Rules >= 900px
@@ -84,8 +104,6 @@ git push -u origin main
 ## App.tsx Highlights
 
 - Include all routes in this component
-
-
 
 ## References
 
