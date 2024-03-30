@@ -39,6 +39,7 @@ git push -u origin main
 git remote -v
 git remote set-url origin https://github.com/efgarro/2024-v03-SCR-CMApp.git // Renaming URL
 ```
+
 "origin" is the shorthand for the repo's URL "https://github.com/efgarro/..."
 
 ```sh
@@ -48,13 +49,12 @@ git config --local --list
 git config --list --show-origin
 ```
 
-
 ## CSS Naming Convention
 
 #### Layout Containers Classes
 
 ```sh
-.layout-screen
+.layout_screen
 .layout-container
 .layout-wrapper
 .layout.box
@@ -90,16 +90,14 @@ git config --list --show-origin
 /* miscellaneous */
 ```
 
-#### Breaking Points - SCRApp
-
-- Mobile Screen Rules <= 599px
-- Tablet Screen Rules >=600px < 991px
-- Laptop / Desktop (large) Screen Rules >= 900px
-
 #### Breaking Points - CMApp
 
-- Tablet Screen Rules >=600px < 991px
-- Laptop / Desktop (large) Screen Rules >= 900px
+| Screen Type | Screen Size | Container Size |
+| ----------- | ----------- | -------------- |
+| Small       | >=576px     | 540px          |
+| Medium      | >=768px     | 720px          |
+| Large       | >=992px     | 960px          |
+| X-Large     | >=1200px    | 1140px         |
 
 ## App.tsx Highlights
 
@@ -112,3 +110,4 @@ git config --list --show-origin
 - visitcostarica.com
 - https://www.arcgis.com/apps/webappviewer/index.html?id=6379ba7935a047ca99195f5e0c3cece9#
 - https://www.sinabi.go.cr/contactenos/preguntele_bibliotecaria.aspx
+- https://designmodo.com/bootstrap-5-layout/

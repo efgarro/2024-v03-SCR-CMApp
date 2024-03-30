@@ -5,4 +5,4 @@ import CMApp from "./CMApp"; // Import Content Management App
 const domNode = document.getElementById("app") as HTMLElement;
 const root = createRoot(domNode);
 
-root.render(<CMApp /* name="Bella"*/ />);
+root.render(<CMApp />);

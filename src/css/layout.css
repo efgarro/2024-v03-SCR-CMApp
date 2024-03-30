@@ -1,4 +1,3 @@
-
 /* LAYOUT RULES */
 
 /* Mobile Screen Rules <= 599px */
@@ -8,6 +7,7 @@
 @media only screen and (min-device-width: 600px) and (max-device-width: 899px) and (-webkit-min-device-pixel-ratio: 1) {
   .layout-screen {
     width: 100%;
+    height: 100vh;
   }
   .layout-wrapper {
     /* background: #80b8be; */
@@ -33,6 +33,7 @@
 @media (min-width: 900px) {
   .layout-screen {
     width: 100%;
+    height: 100vh;
   }
   .layout-wrapper {
     /* background: #80b8be; */
