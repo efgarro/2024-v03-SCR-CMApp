@@ -14,7 +14,12 @@ const CMApp = (/*{ name } : {name: string}*/) => {
       <Routes>
         <Route path="/" element={<Dashboard />}>
           <Route index element={<RegisterPlace />} />
-          <Route path="register-place" element={<RegisterPlace />} />
+          <Route path="register/places" element={<RegisterPlace />} />
+          <Route
+            path="register/articles"
+            element={<div>register/articles</div>}
+          />
+          <Route path="manage/places" element={<div>manage/places</div>} />
           <Route path="about" element={<AboutPage />} />
           <Route path="company" element={<Company />} />
           <Route path="*" element={<NotFound />} />
