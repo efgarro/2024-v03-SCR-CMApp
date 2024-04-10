@@ -55,25 +55,25 @@ git config --list --show-origin
 
 ```sh
 .layout_screen
-.layout-container
-.layout-wrapper
-.layout.box
-.layout-wrapperOne, .layout-wrapperTwo, etc
-.layout-flex-row
-.layout-flex-col
+.layout_container
+.layout_wrapper
+.layout_box
+.layout_wrapperOne, .layout_wrapperTwo, etc.
+.layout_flex-row
+.layout_flex-col
 ```
 
-#### UI Module Classes
+#### UI Components / Modules Classes
 
 ```sh
-.header-menu, .header-logo, .header-searchBox, .header-<name>
-.footer-menu, .footer-logo, .footer-searchBox, .footer-<name>
-.sidebar-box, sidebar-title, sidebar-<name>
-.navbar-<name>
-.main-content-<name>
-.caseOne-<name>, .caseTwo-<name>
-.podOne-<name>, .podTwo-<name>
-.restaBox-<name>
+.header_menu, .header_logo, .header_searchBox, .header_<name>
+.footer_menu, .footer_logo, .footer_searchBox, .footer_<name>
+.sidebar_box, sidebar_title, sidebar_<name>
+.navbar_<name>
+.main-content_<name>
+.caseOne_<name>, .caseTwo_<name>
+.podOne_<name>, .podTwo_<name>
+.restaBox_<name>
 ```
 
 #### Organizing Properties
