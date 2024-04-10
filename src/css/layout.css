@@ -58,11 +58,13 @@
   }
   .layout_sidebar {
     background-color: #4c76b7;
-    flex-basis: 18.75%;
+    flex: 0 0 auto;
+    width: 18.75%;
   }
   .layout_content {
-    background-color: #F5F5F5;
-    flex-basis: 81.25%;
+    background-color: #f5f5f5;
+    flex: 0 0 auto;
+    width: 81.25%;
   }
 
   .layout_wrapper {
