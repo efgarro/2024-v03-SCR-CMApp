@@ -9,12 +9,12 @@ This is the Content Management Client to register and update places, articles, u
 - Plain CSS / CSS Modules
 - Material UI
 - Figma Design Tool
-- React Router DOM
+- React Router DOM / Auth
+- React Hook Form / Zod Schema Validation / React Select
 - React Query
 - React Table
 - Axios HTTP Client
 - Passport JWT / Axios Interceptors
-- React Hook Form / Zod Schema Validation
 - Uppy File Uploader
 - AWS SDK / S3-Client / Cloudflare R2 Object Storage
 - ExifReader

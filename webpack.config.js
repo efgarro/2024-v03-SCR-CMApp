@@ -1,4 +1,5 @@
 const path = require("path");
+const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
@@ -37,7 +38,7 @@ const config = {
         include: /\.module\.css$/,
       },
       {
-        test: /\.svg$/,
+        test: /\.(svg|png|ico)$/,
         use: "file-loader",
       },
       {
@@ -51,7 +52,7 @@ const config = {
     port: 3500,
     open: {
       app: {
-        name: "firefox", 
+        name: "firefox",
       },
     },
     historyApiFallback: true, //for react-router-dom
@@ -59,8 +60,10 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
+      favicon: "./src/favicon.png",
       template: "src/template.html",
     }),
+    new Dotenv(),
   ],
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
