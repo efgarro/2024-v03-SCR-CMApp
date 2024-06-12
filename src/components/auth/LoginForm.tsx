@@ -1,14 +1,29 @@
 import * as React from "react";
 
+import { schema, ILoginFormInputs } from "../../types/scrTypes";
+import { useForm, FormProvider } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import InputEmail from "./InputEmail";
+import InputPassword from "./InputPassword";
 import { signIn } from "../../services/authServices";
-import { useAuth } from "./AuthContext";
+
+import { Typography, Button } from "@mui/material";
+import AccountBox from "@mui/icons-material/AccountBox";
+import styles from "../../css/auth.module.css";
 
 const LoginForm = () => {
-  const { email, setEmail, password, setPassword } = useAuth();
-  const handleSignIn = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
+  const methods = useForm<ILoginFormInputs>({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+    resolver: zodResolver(schema),
+  });
+
+  const handleSignIn = async (d: ILoginFormInputs) => {
     try {
-      const session = await signIn(email, password);
+      const session = await signIn(d.email, d.password);
       console.log("Sign in successful", session);
       if (session && typeof session.AccessToken !== "undefined") {
         sessionStorage.setItem("accessToken", session.AccessToken);
@@ -27,33 +42,23 @@ const LoginForm = () => {
 
   return (
     <React.Fragment>
-      <h1>Welcome</h1>
-      <h4>Login to your account</h4>
-      <form onSubmit={handleSignIn}>
-        <div>
-          <input
-            className="inputText"
-            id="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-          />
-        </div>
-        <div>
-          <input
-            className="inputText"
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
+      <div className={`layout_flexCol ${styles.authForm_header}`}>
+        <AccountBox sx={{ color: "#F000D0" }} />
+        <Typography variant="h6" align="center">
+          Login
+        </Typography>
+      </div>
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(handleSignIn)}>
+          <div className={`layout_flexCol ${styles.authForm_input}`}>
+            <InputEmail />
+            <InputPassword />
+            <Button type="submit" variant="contained">
+              Login
+            </Button>
+          </div>
+        </form>
+      </FormProvider>
     </React.Fragment>
   );
 };

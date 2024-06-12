@@ -1,20 +1,34 @@
 import * as React from "react";
-import { useAuth } from "./AuthContext";
+
+import { ISignUpFormInputs } from "../../types/scrTypes";
 import { useNavigate } from "react-router-dom";
+import { useForm, FormProvider } from "react-hook-form";
+
+import InputEmail from "./InputEmail";
+import InputPassword from "./InputPassword";
+import InputConfirmPassword from "./InputConfirmPassword";
 import { signUp } from "../../services/authServices";
 
+import { Typography, Button } from "@mui/material";
+import AccountBox from "@mui/icons-material/AccountBox";
+import styles from "../../css/auth.module.css";
+
 const SignUpForm = () => {
-  const {
-    email,
-    setEmail,
-    password,
-    setPassword,
-    confirmPassword,
-    setConfirmPassword,
-  } = useAuth();
   const navigate = useNavigate();
-  const handleSignUp = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
+
+  const methods = useForm<ISignUpFormInputs>({
+    defaultValues: {
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+  });
+
+  const handleSignUp = async ({
+    email,
+    password,
+    confirmPassword,
+  }: ISignUpFormInputs) => {
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
@@ -29,44 +43,24 @@ const SignUpForm = () => {
 
   return (
     <React.Fragment>
-      <h1>Welcome</h1>
-      <h4>Sign up to create an account</h4>
-      <form onSubmit={handleSignUp}>
-        <div>
-          <input
-            className="inputText"
-            id="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-          />
-        </div>
-        <div>
-          <input
-            className="inputText"
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-          />
-        </div>
-        <div>
-          <input
-            className="inputText"
-            id="confirmPassword"
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            placeholder="Confirm Password"
-            required
-          />
-        </div>
-        <button type="submit">Sign Up</button>
-      </form>
+      <div className={`layout_flexCol ${styles.authForm_header}`}>
+        <AccountBox sx={{ color: "#F000D0" }} />
+        <Typography variant="h6" align="center">
+          Sign Up
+        </Typography>
+      </div>
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(handleSignUp)}>
+          <div className={`layout_flexCol ${styles.authForm_input}`}>
+            <InputEmail />
+            <InputPassword />
+            <InputConfirmPassword />
+            <Button type="submit" variant="contained">
+              Sign Up
+            </Button>
+          </div>
+        </form>
+      </FormProvider>
     </React.Fragment>
   );
 };

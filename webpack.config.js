@@ -60,7 +60,7 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      favicon: "./src/favicon.png",
+      favicon: "./src/favicon.ico",
       template: "src/template.html",
     }),
     new Dotenv(),

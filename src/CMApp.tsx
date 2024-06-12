@@ -3,21 +3,23 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Outlet,
   Navigate,
 } from "react-router-dom";
-import { AuthProvider } from "./components/auth/AuthContext";
+
+import AuthLayout from "./components/auth/AuthLayout";
 import AuthChoices from "./components/auth/AuthChoices";
-import ConfirmSignUp from "./components/auth/ConfirmSignUp";
-import ConfirmResetPassword from "./components/auth/ConfirmResetPassword";
+import ConfirmSignUpForm from "./components/auth/ConfirmSignUpForm";
+import ConfirmResetPasswordForm from "./components/auth/ConfirmResetPasswordForm";
 
 import Dashboard from "./layouts/Dashboard";
 import AboutPage from "./components/AboutPage";
 import Company from "./components/Company";
 import NotFound from "./components/NotFound";
-import "./css/styles.css";
 import RegisterPlace from "./components/register/RegisterPlace";
-import LoginPage from "./layouts/LoginPage";
+
+import { ThemeProvider } from "@mui/material/styles";
+import { customTheme } from "./css/customTheme";
+import "./css/styles.css";
 
 const CMApp = () => {
   const isAuthenticated = () => {
@@ -25,12 +27,17 @@ const CMApp = () => {
     return !!accessToken;
   };
   return (
-    <AuthProvider>
+    <ThemeProvider theme={customTheme}>
       <BrowserRouter>
         <Routes>
-          <Route path="auth" element={<AuthChoices />} />
-          <Route path="auth/confirm/signup" element={<ConfirmSignUp />} />
-          <Route path="auth/confirm/reset" element={<ConfirmResetPassword />} />
+          <Route element={<AuthLayout/>}>
+            <Route path="auth" element={<AuthChoices />} />
+            <Route path="auth/confirm/signup" element={<ConfirmSignUpForm />} />
+            <Route
+              path="auth/confirm/reset"
+              element={<ConfirmResetPasswordForm />}
+            />
+          </Route>
           <Route
             path="/"
             element={
@@ -55,7 +62,7 @@ const CMApp = () => {
           {/* <Route path="/error" element={<ErrorPage />} /> */}
         </Routes>
       </BrowserRouter>
-    </AuthProvider>
+    </ThemeProvider>
   );
 };
 

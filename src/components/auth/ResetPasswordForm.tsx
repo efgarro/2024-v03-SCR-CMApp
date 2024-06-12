@@ -1,14 +1,26 @@
 import * as React from "react";
-import { useAuth } from "./AuthContext";
+
+import { IForgotPasswordFormInputs } from "../../types/scrTypes";
+import { useForm, FormProvider } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+
+import InputEmail from "./InputEmail";
 import { forgotPassword } from "../../services/authServices";
 
+import { Typography, Button } from "@mui/material";
+import AccountBox from "@mui/icons-material/AccountBox";
+import styles from "../../css/auth.module.css";
+
 const ResetPasswordForm = () => {
-  const { email, setEmail } = useAuth();
   const navigate = useNavigate();
 
-  const handleForgotPassword = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
+  const methods = useForm<IForgotPasswordFormInputs>({
+    defaultValues: {
+      email: "",
+    },
+  });
+
+  const handleForgotPassword = async ({ email }: IForgotPasswordFormInputs) => {
     try {
       await forgotPassword(email);
       navigate("/auth/confirm/reset", { state: { email } });
@@ -19,22 +31,22 @@ const ResetPasswordForm = () => {
 
   return (
     <React.Fragment>
-      <h1>Welcome</h1>
-      <h4>Reset forgotten password</h4>
-      <form onSubmit={handleForgotPassword}>
-        <div>
-          <input
-            className="inputText"
-            id="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-          />
-        </div>
-        <button type="submit">Send Code to Email</button>
-      </form>
+      <div className={`layout_flexCol ${styles.authForm_header}`}>
+        <AccountBox sx={{ color: "#F000D0" }} />
+        <Typography variant="h6" align="center">
+          Forgot Password?
+        </Typography>
+      </div>
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(handleForgotPassword)}>
+          <div className={`layout_flexCol ${styles.authForm_input}`}>
+            <InputEmail />
+            <Button type="submit" variant="contained">
+              Reset Password
+            </Button>
+          </div>
+        </form>
+      </FormProvider>
     </React.Fragment>
   );
 };

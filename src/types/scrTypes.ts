@@ -1,12 +1,30 @@
+import * as z from "zod";
 
+export const schema = z.object({
+  email: z.string().email(),
+  password: z.string().optional(),
+  confirmPassword: z.string().optional(),
+  confirmationCode: z.string().optional(),
+});
 
-export interface IAuthContext {
+export interface ILoginFormInputs {
   email: string;
-  setEmail: React.Dispatch<React.SetStateAction<string>>;
   password: string;
-  setPassword: React.Dispatch<React.SetStateAction<string>>;
+}
+export interface ISignUpFormInputs {
+  email: string;
+  password: string;
   confirmPassword: string;
-  setConfirmPassword: React.Dispatch<React.SetStateAction<string>>;
+}
+export interface IForgotPasswordFormInputs {
+  email: string;
+}
+export interface IConfirmSignUpFormInputs {
+  email: string;
   confirmationCode: string;
-  setConfirmationCode: React.Dispatch<React.SetStateAction<string>>;
+}
+export interface IConfirmResetPasswordFormInputs {
+  email: string;
+  password: string;
+  confirmationCode: string;
 }
