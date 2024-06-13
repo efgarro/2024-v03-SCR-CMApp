@@ -1,8 +1,9 @@
 import * as React from "react";
 
-import { ISignUpFormInputs } from "../../types/scrTypes";
+import { authSchema, ISignUpFormInputs } from "../../types/scrTypes";
 import { useNavigate } from "react-router-dom";
 import { useForm, FormProvider } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import InputEmail from "./InputEmail";
 import InputPassword from "./InputPassword";
@@ -22,6 +23,7 @@ const SignUpForm = () => {
       password: "",
       confirmPassword: "",
     },
+    resolver: zodResolver(authSchema),
   });
 
   const handleSignUp = async ({

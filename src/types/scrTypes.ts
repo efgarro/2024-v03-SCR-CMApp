@@ -1,8 +1,9 @@
 import * as z from "zod";
 
-export const schema = z.object({
+export const authSchema = z.object({
   email: z.string().email(),
   password: z.string().optional(),
+  newPassword: z.string().optional(),
   confirmPassword: z.string().optional(),
   confirmationCode: z.string().optional(),
 });
@@ -25,6 +26,6 @@ export interface IConfirmSignUpFormInputs {
 }
 export interface IConfirmResetPasswordFormInputs {
   email: string;
-  password: string;
+  newPassword: string;
   confirmationCode: string;
 }

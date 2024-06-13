@@ -1,8 +1,9 @@
 import * as React from "react";
 
-import { IForgotPasswordFormInputs } from "../../types/scrTypes";
-import { useForm, FormProvider } from "react-hook-form";
+import { authSchema, IForgotPasswordFormInputs } from "../../types/scrTypes";
 import { useNavigate } from "react-router-dom";
+import { useForm, FormProvider } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import InputEmail from "./InputEmail";
 import { forgotPassword } from "../../services/authServices";
@@ -18,6 +19,7 @@ const ResetPasswordForm = () => {
     defaultValues: {
       email: "",
     },
+    resolver: zodResolver(authSchema),
   });
 
   const handleForgotPassword = async ({ email }: IForgotPasswordFormInputs) => {

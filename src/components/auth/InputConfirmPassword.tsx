@@ -19,6 +19,7 @@ const InputConfirmPassword = () => {
           label="Confirm Password"
           variant="outlined"
           margin="normal"
+          type="password"
         />
     </React.Fragment>
   );

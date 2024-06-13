@@ -1,12 +1,13 @@
 import * as React from "react";
 
-import { IConfirmSignUpFormInputs } from "../../types/scrTypes";
-import { useForm, FormProvider } from "react-hook-form";
+import { authSchema, IConfirmSignUpFormInputs } from "../../types/scrTypes";
 import { useLocation, useNavigate } from "react-router-dom";
-import { confirmSignUp } from "../../services/authServices";
+import { useForm, FormProvider } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import InputEmail from "./InputEmail";
 import InputConfirmationCode from "./InputConfirmationCode";
+import { confirmSignUp } from "../../services/authServices";
 
 import { Typography, Button } from "@mui/material";
 import AccountBox from "@mui/icons-material/AccountBox";
@@ -21,6 +22,7 @@ const ConfirmSignUp = () => {
       email: "",
       confirmationCode: "",
     },
+    resolver: zodResolver(authSchema),
   });
 
   const handleConfirmSignUp = async (d: IConfirmSignUpFormInputs) => {
@@ -48,6 +50,17 @@ const ConfirmSignUp = () => {
             <InputConfirmationCode />
             <Button type="submit" variant="contained">
               Confirm Sign Up
+            </Button>
+          </div>
+          <div className={`layout_flexRow ${styles.authForm_pod}`}>
+            <Button
+              sx={{ textTransform: "none", fontSize: 12 }}
+              color="error"
+              onClick={() => {
+                navigate("/auth");
+              }}
+            >
+              Back to Login
             </Button>
           </div>
         </form>

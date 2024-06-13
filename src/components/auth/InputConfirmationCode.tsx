@@ -9,17 +9,19 @@ const InputConfirmationCode = () => {
   const {
     formState: { errors },
   } = useFormContext();
-  const { field: code } = useController({ name: "code" });
+  const { field: confirmationCode } = useController({
+    name: "confirmationCode",
+  });
 
   return (
     <React.Fragment>
-        <TextField
-          {...code}
-          error={errors?.code ? true : false}
-          label="Confirmation Code"
-          variant="outlined"
-          margin="normal"
-        />
+      <TextField
+        {...confirmationCode}
+        error={errors?.confirmationCode ? true : false}
+        label="Confirmation Code"
+        variant="outlined"
+        margin="normal"
+      />
     </React.Fragment>
   );
 };

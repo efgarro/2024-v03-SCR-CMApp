@@ -5,18 +5,18 @@ import { useController, useFormContext } from "react-hook-form";
 
 import styles from "../../css/auth.module.css";
 
-const InputPassword = () => {
+const InputNewPassword = () => {
   const {
     formState: { errors },
   } = useFormContext();
-  const { field: password } = useController({ name: "password" });
+  const { field: newPassword } = useController({ name: "newPassword" });
 
   return (
     <React.Fragment>
       <TextField
-        {...password}
-        error={errors?.password ? true : false}
-        label="Password"
+        {...newPassword}
+        error={errors?.newPassword ? true : false}
+        label="New Password"
         variant="outlined"
         margin="normal"
         type="password"
@@ -25,4 +25,4 @@ const InputPassword = () => {
   );
 };
 
-export default InputPassword;
+export default InputNewPassword;

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { schema, ILoginFormInputs } from "../../types/scrTypes";
+import { authSchema, ILoginFormInputs } from "../../types/scrTypes";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -18,7 +18,7 @@ const LoginForm = () => {
       email: "",
       password: "",
     },
-    resolver: zodResolver(schema),
+    resolver: zodResolver(authSchema),
   });
 
   const handleSignIn = async (d: ILoginFormInputs) => {

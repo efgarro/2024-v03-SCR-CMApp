@@ -1,11 +1,15 @@
 import * as React from "react";
 
-import { IConfirmResetPasswordFormInputs } from "../../types/scrTypes";
-import { useForm, FormProvider } from "react-hook-form";
+import {
+  authSchema,
+  IConfirmResetPasswordFormInputs,
+} from "../../types/scrTypes";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useForm, FormProvider } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import InputEmail from "./InputEmail";
-import InputPassword from "./InputPassword";
+import InputNewPassword from "./InputNewPassword";
 import { confirmForgotPassword } from "../../services/authServices";
 
 import { Typography, Button } from "@mui/material";
@@ -20,14 +24,15 @@ const ConfirmResetPasswordForm = () => {
   const methods = useForm<IConfirmResetPasswordFormInputs>({
     defaultValues: {
       email: "",
-      password: "",
+      newPassword: "",
       confirmationCode: "",
     },
+    resolver: zodResolver(authSchema),
   });
 
   const handleForgotPassword = async (d: IConfirmResetPasswordFormInputs) => {
     try {
-      await confirmForgotPassword(d.email, d.password, d.confirmationCode);
+      await confirmForgotPassword(d.email, d.newPassword, d.confirmationCode);
       alert("Account confirmed successfully!\nSign in on next page.");
       navigate("/auth");
     } catch (error) {
@@ -47,7 +52,7 @@ const ConfirmResetPasswordForm = () => {
         <form onSubmit={methods.handleSubmit(handleForgotPassword)}>
           <div className={`layout_flexCol ${styles.authForm_input}`}>
             <InputEmail />
-            <InputPassword />
+            <InputNewPassword />
             <InputConfirmationCode />
             <Button type="submit" variant="contained">
               Confirm Reset Password
